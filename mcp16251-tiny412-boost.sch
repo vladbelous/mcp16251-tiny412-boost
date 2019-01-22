@@ -1,0 +1,834 @@
+EESchema Schematic File Version 4
+EELAYER 26 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "MCP16251T-based boost SMD module"
+Date "2019-01-21"
+Rev "1"
+Comp ""
+Comment1 "creativecommons.org/licenses"
+Comment2 "CC BY-SA 4.0 license"
+Comment3 "Vlad Belous"
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	2100 1950 2100 1650
+Wire Wire Line
+	2100 1650 2200 1650
+Text GLabel 2200 1650 2    50   Input ~ 0
+Vbat_raw_sense
+$Comp
+L Device:Q_PMOS_GSD Q1
+U 1 1 5C038257
+P 2600 2050
+F 0 "Q1" V 2750 2200 50  0000 C CNN
+F 1 "Q_PMOS_GSD" V 2853 2050 50  0000 C CNN
+F 2 "MCP16251_module:SOT-23_HS" H 2800 2150 50  0001 C CNN
+F 3 "~" H 2600 2050 50  0001 C CNN
+	1    2600 2050
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	2100 1950 2200 1950
+$Comp
+L Device:R R1
+U 1 1 5C03837C
+P 2200 2200
+F 0 "R1" H 2270 2247 50  0000 L CNN
+F 1 "100k" H 2270 2154 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 2130 2200 50  0001 C CNN
+F 3 "~" H 2200 2200 50  0001 C CNN
+	1    2200 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 2050 2200 1950
+Connection ~ 2200 1950
+Wire Wire Line
+	2200 1950 2400 1950
+Wire Wire Line
+	2200 2450 2600 2450
+Wire Wire Line
+	2200 2350 2200 2450
+Wire Wire Line
+	2600 2250 2600 2450
+$Comp
+L Switch:SW_Push SW2
+U 1 1 5C03869F
+P 2600 2750
+F 0 "SW2" V 2650 2700 50  0000 R CNN
+F 1 "SW_Push" V 2550 2700 50  0000 R CNN
+F 2 "Buttons_Switches_SMD:SW_SPST_TL3342" H 2600 2950 50  0001 C CNN
+F 3 "" H 2600 2950 50  0001 C CNN
+	1    2600 2750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R5
+U 1 1 5C038744
+P 1600 2900
+F 0 "R5" H 1670 2947 50  0000 L CNN
+F 1 "100k" H 1670 2854 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 1530 2900 50  0001 C CNN
+F 3 "~" H 1600 2900 50  0001 C CNN
+	1    1600 2900
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2450 2600 2550
+Connection ~ 2600 2450
+$Comp
+L Device:Q_NPN_BEC Q2
+U 1 1 5C03897A
+P 2100 2750
+F 0 "Q2" H 2290 2797 50  0000 L CNN
+F 1 "NPN_3904" H 1750 2600 50  0000 L CNN
+F 2 "MCP16251_module:SOT-23_HS" H 2300 2850 50  0001 C CNN
+F 3 "~" H 2100 2750 50  0001 C CNN
+	1    2100 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5C038BEB
+P 2200 3050
+F 0 "#PWR07" H 2200 2800 50  0001 C CNN
+F 1 "GND" H 2205 2874 50  0000 C CNN
+F 2 "" H 2200 3050 50  0001 C CNN
+F 3 "" H 2200 3050 50  0001 C CNN
+	1    2200 3050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:R_Small R4
+U 1 1 5C038DEC
+P 1750 2750
+F 0 "R4" V 1540 2750 50  0000 C CNN
+F 1 "100k" V 1633 2750 50  0000 C CNN
+F 2 "MCP16251_module:R_0805_HS" V 1680 2750 50  0001 C CNN
+F 3 "~" H 1750 2750 50  0001 C CNN
+	1    1750 2750
+	0    -1   1    0   
+$EndComp
+Text GLabel 1400 2750 0    50   Input ~ 0
+PWR_CONTROL
+Text GLabel 3800 1950 2    50   Input ~ 0
+VBAT
+Text Notes 1650 1250 0    100  ~ 0
+Raw VBAT input, power-off circuit,\nvoltage supervisor for boost converter
+$Comp
+L local_symbols:MCP16251T U1
+U 1 1 5C03A295
+P 6750 1950
+F 0 "U1" H 6775 2633 50  0000 C CNN
+F 1 "MCP16251T" H 6775 2540 50  0000 C CNN
+F 2 "MCP16251_module:SOT-23-6_HS" H 6750 1950 50  0001 C CNN
+F 3 "" H 6750 1950 50  0001 C CNN
+	1    6750 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 2150 6150 2150
+$Comp
+L Device:C C4
+U 1 1 5C03A950
+P 5450 2200
+F 0 "C4" H 5200 2250 50  0000 L CNN
+F 1 "4.7uF" H 5100 2150 50  0000 L CNN
+F 2 "MCP16251_module:R_1206_HS" H 5488 2050 50  0001 C CNN
+F 3 "~" H 5450 2200 50  0001 C CNN
+	1    5450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR05
+U 1 1 5C03A9B0
+P 6850 2550
+F 0 "#PWR05" H 6850 2300 50  0001 C CNN
+F 1 "GND" H 6855 2374 50  0000 C CNN
+F 2 "" H 6850 2550 50  0001 C CNN
+F 3 "" H 6850 2550 50  0001 C CNN
+	1    6850 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 1950 5450 2050
+Text GLabel 5250 1950 0    50   Input ~ 0
+VBAT
+$Comp
+L Device:L L1
+U 1 1 5C03B30E
+P 6300 1450
+F 0 "L1" V 6495 1450 50  0000 C CNN
+F 1 "4.7uH" V 6402 1450 50  0000 C CNN
+F 2 "MCP16251_module:L_Taiyo-Yuden_NR-S-40xx_HS" H 6300 1450 50  0001 C CNN
+F 3 "~" H 6300 1450 50  0001 C CNN
+	1    6300 1450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6450 1450 6650 1450
+Wire Wire Line
+	6150 1450 5950 1450
+Wire Wire Line
+	5950 1450 5950 1950
+$Comp
+L Device:R R2
+U 1 1 5C03BA24
+P 7450 1900
+F 0 "R2" H 7520 1947 50  0000 L CNN
+F 1 "R" H 7520 1854 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 7380 1900 50  0001 C CNN
+F 3 "~" H 7450 1900 50  0001 C CNN
+	1    7450 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5C03BA8B
+P 7450 2200
+F 0 "R3" H 7520 2247 50  0000 L CNN
+F 1 "R" H 7520 2154 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 7380 2200 50  0001 C CNN
+F 3 "~" H 7450 2200 50  0001 C CNN
+	1    7450 2200
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R_POT RV1
+U 1 1 5C03BC56
+P 7850 2050
+F 0 "RV1" H 7780 2097 50  0000 R CNN
+F 1 "R_POT" H 7780 2004 50  0000 R CNN
+F 2 "MCP16251_module:Conn_01x03_small" H 7850 2050 50  0001 C CNN
+F 3 "~" H 7850 2050 50  0001 C CNN
+	1    7850 2050
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 2050 7450 2050
+Connection ~ 7450 2050
+Wire Wire Line
+	7450 2050 7700 2050
+Wire Wire Line
+	7250 1750 7450 1750
+Wire Wire Line
+	7450 1750 7850 1750
+Wire Wire Line
+	7850 1750 7850 1900
+Connection ~ 7450 1750
+Wire Wire Line
+	7850 2200 7850 2350
+Wire Wire Line
+	7850 2350 7450 2350
+$Comp
+L power:GND #PWR06
+U 1 1 5C03CD33
+P 7450 2550
+F 0 "#PWR06" H 7450 2300 50  0001 C CNN
+F 1 "GND" H 7455 2374 50  0000 C CNN
+F 2 "" H 7450 2550 50  0001 C CNN
+F 3 "" H 7450 2550 50  0001 C CNN
+	1    7450 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7450 2550 7450 2350
+Connection ~ 7450 2350
+Text Notes 7600 2750 0    50   ~ 0
+FB = 1.23V.\nPlace fixed voltage divider,\nor the trim pot.
+Wire Wire Line
+	7850 1750 8350 1750
+Connection ~ 7850 1750
+Wire Wire Line
+	8350 1750 8350 1850
+Text GLabel 9250 1750 2    50   Input ~ 0
+5V
+Text Notes 7400 1400 0    100  ~ 0
+MCP16251T (SOT-23-6)\nvoltage boost regulator
+$Comp
+L Device:C C1
+U 1 1 5C041385
+P 8350 2000
+F 0 "C1" H 8465 2047 50  0000 L CNN
+F 1 "10uF" H 8465 1954 50  0000 L CNN
+F 2 "MCP16251_module:R_1206_HS" H 8388 1850 50  0001 C CNN
+F 3 "~" H 8350 2000 50  0001 C CNN
+	1    8350 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8350 2150 8350 2250
+$Comp
+L power:GND #PWR01
+U 1 1 5C04138C
+P 8350 2250
+F 0 "#PWR01" H 8350 2000 50  0001 C CNN
+F 1 "GND" H 8355 2074 50  0000 C CNN
+F 2 "" H 8350 2250 50  0001 C CNN
+F 3 "" H 8350 2250 50  0001 C CNN
+	1    8350 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 8350 1750
+$Comp
+L power:GND #PWR04
+U 1 1 5C0544B2
+P 5450 2450
+F 0 "#PWR04" H 5450 2200 50  0001 C CNN
+F 1 "GND" H 5455 2274 50  0000 C CNN
+F 2 "" H 5450 2450 50  0001 C CNN
+F 3 "" H 5450 2450 50  0001 C CNN
+	1    5450 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2350 5450 2450
+Text Notes 5100 2400 0    50   ~ 0
+or 10uF
+Text Notes 9050 2450 0    50   ~ 0
+Optional extra\noutput capacitance,\n1206.\nTotal maximum <= 47uF.
+$Comp
+L Device:C C2
+U 1 1 5C0551E3
+P 8850 2000
+F 0 "C2" H 8965 2047 50  0000 L CNN
+F 1 "C" H 8965 1954 50  0000 L CNN
+F 2 "MCP16251_module:R_1206_HS" H 8888 1850 50  0001 C CNN
+F 3 "~" H 8850 2000 50  0001 C CNN
+	1    8850 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 1750 8850 1850
+Wire Wire Line
+	8350 1750 8850 1750
+Wire Wire Line
+	8850 1750 9250 1750
+Connection ~ 8850 1750
+Wire Wire Line
+	8850 2150 8850 2250
+$Comp
+L power:GND #PWR02
+U 1 1 5C05669B
+P 8850 2250
+F 0 "#PWR02" H 8850 2000 50  0001 C CNN
+F 1 "GND" H 8855 2074 50  0000 C CNN
+F 2 "" H 8850 2250 50  0001 C CNN
+F 3 "" H 8850 2250 50  0001 C CNN
+	1    8850 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5C056B14
+P 1300 6000
+F 0 "J1" H 1300 6100 50  0000 C CNN
+F 1 "THT_Castellated" H 1700 6000 50  0000 C CNN
+F 2 "MCP16251_module:Conn_01x02_cast" H 1300 6000 50  0001 C CNN
+F 3 "~" H 1300 6000 50  0001 C CNN
+	1    1300 6000
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J3
+U 1 1 5C0585BB
+P 3200 6100
+F 0 "J3" H 3200 5900 50  0000 C CNN
+F 1 "THT_Castellated" H 3600 6000 50  0000 C CNN
+F 2 "MCP16251_module:Conn_01x02_cast_mirrored" H 3200 6100 50  0001 C CNN
+F 3 "~" H 3200 6100 50  0001 C CNN
+	1    3200 6100
+	1    0    0    1   
+$EndComp
+Text GLabel 900  1400 2    50   Input ~ 0
+VBAT_RAW
+Text GLabel 1800 6000 2    50   Input ~ 0
+VBAT_RAW
+Text GLabel 2700 6000 0    50   Input ~ 0
+5V
+Wire Wire Line
+	7950 3950 7950 4050
+$Comp
+L power:GND #PWR011
+U 1 1 5C063A39
+P 7950 4050
+F 0 "#PWR011" H 7950 3800 50  0001 C CNN
+F 1 "GND" H 7955 3874 50  0000 C CNN
+F 2 "" H 7950 4050 50  0001 C CNN
+F 3 "" H 7950 4050 50  0001 C CNN
+	1    7950 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5C06736C
+P 1500 6100
+F 0 "#PWR09" H 1500 5850 50  0001 C CNN
+F 1 "GND" H 1505 5924 50  0000 C CNN
+F 2 "" H 1500 6100 50  0001 C CNN
+F 3 "" H 1500 6100 50  0001 C CNN
+	1    1500 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR010
+U 1 1 5C07165F
+P 3000 6100
+F 0 "#PWR010" H 3000 5850 50  0001 C CNN
+F 1 "GND" H 3005 5924 50  0000 C CNN
+F 2 "" H 3000 6100 50  0001 C CNN
+F 3 "" H 3000 6100 50  0001 C CNN
+	1    3000 6100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J2
+U 1 1 5C074DA3
+P 1300 6600
+F 0 "J2" H 1500 6550 50  0000 C CNN
+F 1 "JST_PH_Header" H 1300 6750 50  0000 C CNN
+F 2 "Connectors_JST:JST_PH_S2B-PH-K_02x2.00mm_Angled" H 1300 6600 50  0001 C CNN
+F 3 "~" H 1300 6600 50  0001 C CNN
+	1    1300 6600
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR014
+U 1 1 5C0750C5
+P 1500 6700
+F 0 "#PWR014" H 1500 6450 50  0001 C CNN
+F 1 "GND" H 1505 6524 50  0000 C CNN
+F 2 "" H 1500 6700 50  0001 C CNN
+F 3 "" H 1500 6700 50  0001 C CNN
+	1    1500 6700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 6600 1500 6600
+$Comp
+L Switch:SW_SPDT SW1
+U 1 1 5C07AA94
+P 1600 2050
+F 0 "SW1" H 1550 1900 50  0000 C CNN
+F 1 "SW_SPDT" H 1600 1800 50  0000 C CNN
+F 2 "MCP16251_module:Conn_01x03_small" H 1600 2050 50  0001 C CNN
+F 3 "" H 1600 2050 50  0001 C CNN
+	1    1600 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1800 1950 1900 1950
+Connection ~ 2100 1950
+$Comp
+L Jumper:SolderJumper_2_Open JP1
+U 1 1 5C08228F
+P 1600 1750
+F 0 "JP1" H 1600 1960 50  0000 C CNN
+F 1 "Jumper" H 1600 1867 50  0000 C CNN
+F 2 "MCP16251_module:R_0805_HS" H 1600 1750 50  0001 C CNN
+F 3 "~" H 1600 1750 50  0001 C CNN
+	1    1600 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 1950 1900 1750
+Connection ~ 1900 1950
+Wire Wire Line
+	1900 1950 2100 1950
+Wire Wire Line
+	1300 2050 1300 1900
+Wire Wire Line
+	1300 2050 1400 2050
+Text GLabel 4800 6000 0    50   Input ~ 0
+PWR_CONTROL
+$Comp
+L Connector_Generic:Conn_01x01 J5
+U 1 1 5C08B0BD
+P 5300 6300
+F 0 "J5" H 5379 6342 50  0000 L CNN
+F 1 "THT_Castellated" H 5379 6249 50  0000 L CNN
+F 2 "MCP16251_module:Conn_01x01_cast" H 5300 6300 50  0001 C CNN
+F 3 "~" H 5300 6300 50  0001 C CNN
+	1    5300 6300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0101
+U 1 1 5C25A557
+P 1600 3050
+F 0 "#PWR0101" H 1600 2800 50  0001 C CNN
+F 1 "GND" H 1605 2874 50  0000 C CNN
+F 2 "" H 1600 3050 50  0001 C CNN
+F 3 "" H 1600 3050 50  0001 C CNN
+	1    1600 3050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0102
+U 1 1 5C25DA93
+P 2600 3050
+F 0 "#PWR0102" H 2600 2800 50  0001 C CNN
+F 1 "GND" H 2605 2874 50  0000 C CNN
+F 2 "" H 2600 3050 50  0001 C CNN
+F 3 "" H 2600 3050 50  0001 C CNN
+	1    2600 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2600 2950 2600 3050
+Wire Wire Line
+	5950 1950 6250 1950
+$Comp
+L Device:R_Small R6
+U 1 1 5C264C54
+P 6150 2300
+F 0 "R6" H 6220 2347 50  0000 L CNN
+F 1 "100k" H 6220 2254 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 6080 2300 50  0001 C CNN
+F 3 "~" H 6150 2300 50  0001 C CNN
+	1    6150 2300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 5C2666D5
+P 6150 2450
+F 0 "#PWR0103" H 6150 2200 50  0001 C CNN
+F 1 "GND" H 6155 2274 50  0000 C CNN
+F 2 "" H 6150 2450 50  0001 C CNN
+F 3 "" H 6150 2450 50  0001 C CNN
+	1    6150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L local_symbols:MIC809 U2
+U 1 1 5C26A349
+P 3700 2750
+F 0 "U2" H 4050 2700 50  0000 R CNN
+F 1 "MIC809" H 4200 2600 50  0000 R CNN
+F 2 "MCP16251_module:SOT-23_HS" H 3700 2750 50  0001 C CNN
+F 3 "" H 3700 2750 50  0001 C CNN
+	1    3700 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 5C26A716
+P 3700 3050
+F 0 "#PWR0104" H 3700 2800 50  0001 C CNN
+F 1 "GND" H 3705 2874 50  0000 C CNN
+F 2 "" H 3700 3050 50  0001 C CNN
+F 3 "" H 3700 3050 50  0001 C CNN
+	1    3700 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 4200 2550 2    50   Input ~ 0
+BOOST_EN
+Wire Wire Line
+	4100 2550 4200 2550
+Text GLabel 6050 2150 0    50   Input ~ 0
+BOOST_EN
+Text Notes 3650 2400 0    50   ~ 0
+Vth = 2.93V
+$Comp
+L Device:Polyfuse F1
+U 1 1 5C290274
+P 1050 1900
+F 0 "F1" V 817 1900 50  0000 C CNN
+F 1 "Polyfuse" V 910 1900 50  0000 C CNN
+F 2 "MCP16251_module:R_1206_HS" H 1100 1700 50  0001 L CNN
+F 3 "~" H 1050 1900 50  0001 C CNN
+	1    1050 1900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1200 1900 1300 1900
+Connection ~ 1300 1900
+Wire Wire Line
+	1300 1900 1300 1750
+Wire Wire Line
+	900  1900 800  1900
+Wire Wire Line
+	800  1900 800  1400
+Wire Wire Line
+	800  1400 900  1400
+Text Notes 900  2150 0    50   ~ 0
+750mA\n1206
+Wire Wire Line
+	1900 1750 1750 1750
+Wire Wire Line
+	1300 1750 1450 1750
+Wire Wire Line
+	1900 2750 1850 2750
+Wire Wire Line
+	1650 2750 1600 2750
+Wire Wire Line
+	1600 2750 1600 2800
+Wire Wire Line
+	1600 3000 1600 3050
+Wire Wire Line
+	2200 2450 2200 2550
+Connection ~ 2200 2450
+Wire Wire Line
+	1400 2750 1600 2750
+Connection ~ 1600 2750
+Wire Wire Line
+	2200 2950 2200 3050
+Wire Wire Line
+	3600 1950 3600 2250
+Connection ~ 3600 1950
+Wire Wire Line
+	3600 1950 3800 1950
+Wire Wire Line
+	5450 1950 5250 1950
+Connection ~ 5450 1950
+Wire Wire Line
+	6150 2150 6150 2200
+Wire Wire Line
+	6150 2400 6150 2450
+Wire Wire Line
+	6050 2150 6150 2150
+Connection ~ 6150 2150
+$Comp
+L local_symbols:MIC803 U3
+U 1 1 5C314BE9
+P 1700 4300
+F 0 "U3" H 1467 4447 50  0000 R CNN
+F 1 "MIC803" H 1467 4354 50  0000 R CNN
+F 2 "MCP16251_module:SOT-23_HS" H 1700 4300 50  0001 C CNN
+F 3 "" H 1700 4300 50  0001 C CNN
+	1    1700 4300
+	1    0    0    -1  
+$EndComp
+Text GLabel 1500 3700 0    50   Input ~ 0
+5V
+Wire Wire Line
+	1500 3700 1600 3700
+Wire Wire Line
+	1600 3700 1600 3800
+Text Notes 1700 3950 0    50   ~ 0
+Vth = 2.93V
+Text Notes 1950 4200 0    50   ~ 0
+open-drain
+$Comp
+L power:GND #PWR0105
+U 1 1 5C3174CF
+P 1700 4600
+F 0 "#PWR0105" H 1700 4350 50  0001 C CNN
+F 1 "GND" H 1705 4424 50  0000 C CNN
+F 2 "" H 1700 4600 50  0001 C CNN
+F 3 "" H 1700 4600 50  0001 C CNN
+	1    1700 4600
+	1    0    0    -1  
+$EndComp
+Text GLabel 2450 4100 2    50   Input ~ 0
+uC_RESET
+Text Notes 2000 7800 0    100  ~ 0
+Headers and connectors;\n\nTHT_Castellated = 5.08mm screw terminal,\ncombined with castellated edge
+Text Notes 1050 5200 0    100  ~ 0
+Voltage supervisor for microcontroller
+$Comp
+L Device:Q_PMOS_GSD Q4
+U 1 1 5C47FB36
+P 6850 3650
+F 0 "Q4" V 7196 3650 50  0000 C CNN
+F 1 "Q_PMOS_GSD" V 7103 3650 50  0000 C CNN
+F 2 "MCP16251_module:SOT-23_HS" H 7050 3750 50  0001 C CNN
+F 3 "~" H 6850 3650 50  0001 C CNN
+	1    6850 3650
+	0    1    -1   0   
+$EndComp
+$Comp
+L Device:Q_PMOS_GSD Q3
+U 1 1 5C47FB3C
+P 6150 3650
+F 0 "Q3" V 6496 3650 50  0000 C CNN
+F 1 "Q_PMOS_GSD" V 6403 3650 50  0000 C CNN
+F 2 "MCP16251_module:SOT-23_HS" H 6350 3750 50  0001 C CNN
+F 3 "~" H 6150 3650 50  0001 C CNN
+	1    6150 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R_Small R8
+U 1 1 5C47FB42
+P 6500 3700
+F 0 "R8" H 6350 3700 50  0000 L CNN
+F 1 "100k" H 6250 3800 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" V 6430 3700 50  0001 C CNN
+F 3 "~" H 6500 3700 50  0001 C CNN
+	1    6500 3700
+	1    0    0    1   
+$EndComp
+Text GLabel 8250 3550 2    50   Input ~ 0
+uC_ADC
+Text Notes 4000 2700 0    50   ~ 0
+push-pull
+$Comp
+L local_symbols:MIC2777 U4
+U 1 1 5C4FDBC3
+P 7150 4350
+F 0 "U4" H 6850 4200 50  0000 C CNN
+F 1 "MIC2777" H 6750 4100 50  0000 C CNN
+F 2 "MCP16251_module:SOT-23-5_HS" H 7150 4350 50  0001 C CNN
+F 3 "" H 7150 4350 50  0001 C CNN
+	1    7150 4350
+	-1   0    0    -1  
+$EndComp
+Text GLabel 7600 4050 2    50   Input ~ 0
+5V
+Wire Wire Line
+	7550 4150 7550 4050
+Wire Wire Line
+	7550 4050 7600 4050
+Text Notes 7100 4000 0    50   ~ 0
+Vth = 4.68V
+$Comp
+L power:GND #PWR0106
+U 1 1 5C51BA94
+P 7150 4750
+F 0 "#PWR0106" H 7150 4500 50  0001 C CNN
+F 1 "GND" H 7154 4571 50  0000 C CNN
+F 2 "" H 7150 4750 50  0001 C CNN
+F 3 "" H 7150 4750 50  0001 C CNN
+	1    7150 4750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 4350 6700 4350
+NoConn ~ 6700 4150
+Wire Wire Line
+	6500 3550 6500 3600
+Wire Wire Line
+	6500 3800 6500 3850
+Wire Wire Line
+	6150 3850 6500 3850
+Wire Wire Line
+	6350 3550 6500 3550
+Wire Wire Line
+	5800 3550 5950 3550
+Text GLabel 5800 3550 0    50   Input ~ 0
+Vbat_raw_sense
+Text Notes 6100 5200 0    100  ~ 0
+VBAT_RAW voltage switch
+$Comp
+L Device:R R7
+U 1 1 5C5BCDE2
+P 7700 3550
+F 0 "R7" V 7490 3550 50  0000 C CNN
+F 1 "1k" V 7583 3550 50  0000 C CNN
+F 2 "MCP16251_module:R_0805_HS" V 7630 3550 50  0001 C CNN
+F 3 "~" H 7700 3550 50  0001 C CNN
+	1    7700 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5C5BCE9A
+P 7950 3800
+F 0 "C3" H 8065 3847 50  0000 L CNN
+F 1 "100nF" H 8065 3754 50  0000 L CNN
+F 2 "MCP16251_module:R_0805_HS" H 7988 3650 50  0001 C CNN
+F 3 "~" H 7950 3800 50  0001 C CNN
+	1    7950 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7950 3550 7950 3650
+Wire Wire Line
+	7850 3550 7950 3550
+Wire Wire Line
+	6500 3550 6650 3550
+Connection ~ 6500 3550
+Wire Wire Line
+	6850 3850 6500 3850
+Connection ~ 6500 3850
+Wire Wire Line
+	6500 3850 6500 4350
+Wire Wire Line
+	7050 3550 7550 3550
+Text Notes 6450 4500 0    50   ~ 0
+push-pull
+Wire Wire Line
+	5450 1950 5950 1950
+Connection ~ 5950 1950
+Wire Wire Line
+	2100 4100 2450 4100
+$Comp
+L Jumper:SolderJumper_2_Open JP2
+U 1 1 5C6B91A1
+P 3100 2750
+F 0 "JP2" V 3050 2900 50  0000 C CNN
+F 1 "Jumper" V 3150 2950 50  0000 C CNN
+F 2 "MCP16251_module:R_0805_HS" H 3100 2750 50  0001 C CNN
+F 3 "~" H 3100 2750 50  0001 C CNN
+	1    3100 2750
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2800 1950 3600 1950
+Wire Wire Line
+	2600 2450 3100 2450
+Wire Wire Line
+	3100 2450 3100 2600
+Wire Wire Line
+	3100 2900 3100 3050
+$Comp
+L power:GND #PWR0107
+U 1 1 5C6C4B3B
+P 3100 3050
+F 0 "#PWR0107" H 3100 2800 50  0001 C CNN
+F 1 "GND" H 3105 2874 50  0000 C CNN
+F 2 "" H 3100 3050 50  0001 C CNN
+F 3 "" H 3100 3050 50  0001 C CNN
+	1    3100 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1500 6000 1700 6000
+Connection ~ 1700 6000
+Wire Wire Line
+	1700 6000 1800 6000
+Wire Wire Line
+	1700 6600 1700 6000
+Wire Wire Line
+	2700 6000 3000 6000
+Text GLabel 4800 6600 0    50   Input ~ 0
+uC_RESET
+$Comp
+L Connector_Generic:Conn_01x01 J6
+U 1 1 5C2BBDBA
+P 5300 6600
+F 0 "J6" H 5379 6642 50  0000 L CNN
+F 1 "THT_Castellated" H 5379 6549 50  0000 L CNN
+F 2 "MCP16251_module:Conn_01x01_cast" H 5300 6600 50  0001 C CNN
+F 3 "~" H 5300 6600 50  0001 C CNN
+	1    5300 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x01 J4
+U 1 1 5C2EABCC
+P 5300 6000
+F 0 "J4" H 5379 6042 50  0000 L CNN
+F 1 "THT_Castellated" H 5379 5949 50  0000 L CNN
+F 2 "MCP16251_module:Conn_01x01_cast" H 5300 6000 50  0001 C CNN
+F 3 "~" H 5300 6000 50  0001 C CNN
+	1    5300 6000
+	1    0    0    -1  
+$EndComp
+Text GLabel 4800 6300 0    50   Input ~ 0
+uC_ADC
+Wire Wire Line
+	7950 3550 8250 3550
+Connection ~ 7950 3550
+Wire Wire Line
+	4800 6000 5100 6000
+Wire Wire Line
+	4800 6300 5100 6300
+Wire Wire Line
+	4800 6600 5100 6600
+$EndSCHEMATC
