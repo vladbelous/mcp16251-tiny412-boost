@@ -1,7 +1,5 @@
 # "Programmable" MCP16251 boost converter with Attiny412 control
 
-MCP16251 
-
 PCB for MCP16251 ([datasheet](http://ww1.microchip.com/downloads/en/devicedoc/20005173b.pdf)) voltage boost regulator, made "smarter" by the addition of a small ATTINY412 MCU:
 * MCU's pin PA7 controls EN input pin of the boost regulator, allowing a very low power "sleep" / stand-by.
 * Pin PA6 can be used to measure input voltage (VBAT). This can be used to protect battery from over-discharge.
